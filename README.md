@@ -19,7 +19,7 @@ Up ahead on the roadmap :
 
 Artifacts are available in maven central.
 
-###### Maven users:
+##### Maven:
 
 ```xml
 <dependency>
@@ -29,7 +29,7 @@ Artifacts are available in maven central.
 </dependency>
 ``` 
 
-###### Gradle users:
+##### Gradle:
 ```groovy
 compile "org.sheinbergon:governator-vault:1.17.4"
 ```
@@ -63,7 +63,6 @@ LifeCycleInjector injector = LifecycleInjector.builder().
 
         LifecycleManager manager = injector.getInstance(LifecycleManager.class);
         manager.start();
-        return injector;
 ```
 
 
