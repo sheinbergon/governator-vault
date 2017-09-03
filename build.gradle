@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+apply from: 'common.gradle'
+
+task vaultProvision(type: Exec) {
+    workingDir file("${buildDir}/resources/test/")
+    commandLine '/bin/bash', '-c', "./vault-provision.sh"
+}
+
+task vaultDestroy(type: Exec) {
+    workingDir file("${buildDir}/resources/test/")
+    commandLine '/bin/bash', '-c', "./vault-destroy.sh"
+}
+
+test {
+    dependsOn vaultProvision
+    finalizedBy vaultDestroy
+}

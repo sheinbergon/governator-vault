@@ -1,0 +1,85 @@
+plugins {
+    id 'java'
+    id 'maven'
+    id 'signing'
+    id 'maven-publish'
+}
+
+apply from: 'common.gradle'
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    classifier = 'sources'
+    from sourceSets.main.allSource
+}
+
+task javadocJar(type: Jar, dependsOn: javadoc) {
+    classifier = 'javadoc'
+    from javadoc.destinationDir
+}
+
+artifacts{
+    archives sourcesJar
+    archives javadocJar
+}
+
+signing {
+    sign configurations.archives
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId group
+            artifactId 'governator-vault'
+            version version
+            from components.java
+        }
+    }
+    repositories {
+        mavenLocal()
+    }
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+
+            repository(url: "https://oss.sonatype.org/service/local/staging/deploy/maven2/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            snapshotRepository(url: "https://oss.sonatype.org/content/repositories/snapshots/") {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            pom.project {
+                name 'governator-vault'
+                packaging 'jar'
+                description 'Governator extensions to support HashiCorp Vault as a configuration provider Edit'
+                url 'https://github.com/sheinbergon/governator-vault'
+
+                scm {
+                    connection 'scm:git:https://github.com/sheinbergon/governator-vault'
+                    developerConnection 'scm:git:https://github.com/sheinbergon/governator-vault'
+                    url 'https://github.com/sheinbergon/governator-vault'
+                }
+
+                licenses {
+                    license {
+                        name 'The Apache License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'sheibergon'
+                        name 'Idan Sheinberg'
+                        email 'ishinberg0@gmail.com'
+                    }
+                }
+            }
+        }
+    }
+}
