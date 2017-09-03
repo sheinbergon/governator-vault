@@ -1,5 +1,5 @@
 # governator-vault
-[![Build Status](https://travis-ci.org/sheinbergon/governator-vault.svg?branch=master)](https://travis-ci.org/sheinbergon/governator-vault)[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Build Status](https://travis-ci.org/sheinbergon/governator-vault.svg?branch=master)](https://travis-ci.org/sheinbergon/governator-vault) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 This library provides smooth integration between Hashicorp's Vault and Netflix's Governator (Guice), allowing
 you to store and retrieve your application configuration transparently from the vault.
