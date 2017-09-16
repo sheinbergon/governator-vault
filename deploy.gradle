@@ -56,7 +56,7 @@ uploadArchives {
             pom.project {
                 name 'governator-vault'
                 packaging 'jar'
-                description 'Governator extensions to support HashiCorp Vault as a configuration provider Edit'
+                description 'Governator extensions to support HashiCorp Vault as a configuration provider'
                 url 'https://github.com/sheinbergon/governator-vault'
 
                 scm {
@@ -74,7 +74,7 @@ uploadArchives {
 
                 developers {
                     developer {
-                        id 'sheibergon'
+                        id 'sheinbergon'
                         name 'Idan Sheinberg'
                         email 'ishinberg0@gmail.com'
                     }
