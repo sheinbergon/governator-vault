@@ -1,5 +1,5 @@
 # governator-vault
-[![Build Status](https://travis-ci.org/sheinbergon/governator-vault.svg?branch=master)](https://travis-ci.org/sheinbergon/governator-vault) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.sheinbergon/governator-vault/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.sheinbergon/governator-vault)
+[![Build Status](https://travis-ci.org/sheinbergon/governator-vault.svg?branch=master)](https://travis-ci.org/sheinbergon/governator-vault) [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.sheinbergon/governator-vault/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.sheinbergon/governator-vault) [![GitHub release](https://img.shields.io/github/release/sheinbergon/governator-vault.svg)](https://img.shields.io/github/release/sheinbergon/governator-vault)
 
 
 This library provides smooth integration between Hashicorp's Vault and Netflix's Governator (Guice), allowing
